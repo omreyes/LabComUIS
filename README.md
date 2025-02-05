@@ -5,7 +5,7 @@
 - Cualquier omisión en la declaración del uso de IA o la presentación de contenido plagiado será penalizado con nota de 0.0 y reporte a la coordinación del programa.
 - Si emplea referencias disponibles en línea, agregue los hipervínculos respectivos.  
 
-Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe.
+Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe. Ir a [ejemplos en Markdown](#Markdown)
 
 ---
 # Práctica 1: TÍTULO PRÁCTICA
@@ -70,7 +70,7 @@ Ejemplo de referencia:
 
 ## Inclusión de Imágenes
 ### Imagen de referencia dentro del repositorio:
-![Nyquist Sampling Theorem](images/nyquist.png)
+![Networking](my file/test.png)
 
 ### Imagen de fuente externa
 ![GNU Radio logo](https://kb.ettus.com/images/thumb/5/50/gnuradio.png/600px-gnuradio.png)
@@ -120,4 +120,4 @@ También es posible resaltar texto tipo código como `print("Hello, World!")`.
 
 ---
 
-Volver al [INICIO](#Laboratorio)
+Volver al [INICIO](#laboratorio de comunicaciones)
