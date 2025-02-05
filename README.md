@@ -5,7 +5,7 @@
 - Cualquier omisión en la declaración del uso de IA o la presentación de contenido plagiado será penalizado con nota de 0.0 y reporte a la coordinación del programa.
 - Si emplea referencias disponibles en línea, agregue los hipervínculos respectivos.  
 
-Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe. Ir a [ejemplos en Markdown](#ejemplos)
+Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe. Ir a [ejemplos en Markdown](#ejemplos-usando-markdown)
 
 ---
 # Práctica 1: TÍTULO PRÁCTICA
@@ -70,7 +70,7 @@ Ejemplo de referencia:
 
 ## Inclusión de Imágenes
 ### Imagen de referencia dentro del repositorio:
-![Networking](my file/test.png)
+![Networking](my%file/test.png)
 
 ### Imagen de fuente externa
 ![GNU Radio logo](https://kb.ettus.com/images/thumb/5/50/gnuradio.png/600px-gnuradio.png)
@@ -80,8 +80,8 @@ Ejemplo de referencia:
 
 ## Creación de hipevínculos 
 - [Aprende Markdown](https://markdown.es/)
-- [Abrir documento en el repositorio](docs/documento.pdf)
-- Ir a una sección de este documento. Por ejemplo: [Ir a Contenido](#contenido) 
+- [Abrir documento en el repositorio](my%file/test.txt) Si hay espacios en el nombre de su archivo, reemplácelos por %.
+- Ir a una sección de este documento. Por ejemplo: [Ir a Contenido](#contenido) Tenga en cuenta escribir el título de la sección en minúsculas y los espacios reemplazarlos por guiones.
 ## Uso de Expresiones Matemáticas
 Se pueden incluir ecuaciones en el archivo `README.md` utilizando sintaxis similar a [LaTeX](https://manualdelatex.com/tutoriales/ecuaciones):
 
@@ -120,4 +120,4 @@ También es posible resaltar texto tipo código como `print("Hello, World!")`.
 
 ---
 
-Volver al [INICIO](#laboratorio)
+Volver al [INICIO](#laboratorio-de-comunicaciones)
