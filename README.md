@@ -72,7 +72,7 @@ Volver al [INICIO](#laboratorio-de-comunicaciones)
 
 ## Inclusión de Imágenes
 ### Imagen de referencia dentro del repositorio:
-![Networking](my-file/test.png)
+![Networking](my%20file/test.png)
 
 ### Imagen de fuente externa
 ![GNU Radio logo](https://kb.ettus.com/images/thumb/5/50/gnuradio.png/600px-gnuradio.png)
@@ -82,6 +82,7 @@ Volver al [INICIO](#laboratorio-de-comunicaciones)
 
 ## Creación de hipevínculos 
 - [Aprende Markdown](https://markdown.es/)
+- [Más acerca de Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Abrir documento en el repositorio](my%file/test.txt) Si hay espacios en el nombre de su archivo, reemplácelos por %.
 - Ir a una sección de este documento. Por ejemplo: [Ir a Contenido](#contenido) Tenga en cuenta escribir el título de la sección en minúsculas y los espacios reemplazarlos por guiones.
 ## Uso de Expresiones Matemáticas
