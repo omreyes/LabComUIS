@@ -83,7 +83,7 @@ Volver al [INICIO](#laboratorio-de-comunicaciones)
 ## Creación de hipevínculos 
 - [Aprende Markdown](https://markdown.es/)
 - [Más acerca de Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-- [Abrir documento en el repositorio](my%20file/test_file.txt) Si hay espacios en el nombre de su archivo, reemplácelos por `%`.
+- [Abrir documento en el repositorio](my%20file/test_file.txt). Si hay espacios en la ruta de su archivo, reemplácelos por `%20`.
 - Ir a una sección de este documento. Por ejemplo: [Ir a Contenido](#contenido) Tenga en cuenta escribir el título de la sección en minúsculas y los espacios reemplazarlos por guiones.
 ## Uso de Expresiones Matemáticas
 Se pueden incluir ecuaciones en el archivo `README.md` utilizando sintaxis similar a [LaTeX](https://manualdelatex.com/tutoriales/ecuaciones):
