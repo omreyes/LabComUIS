@@ -5,7 +5,7 @@
 - Cualquier omisión en la declaración del uso de IA o la presentación de contenido plagiado será penalizado con nota de 0.0 y reporte a la coordinación del programa.
 - Si emplea referencias disponibles en línea, agregue los hipervínculos respectivos.  
 
-Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe. Ir a [ejemplos en Markdown](#Markdown)
+Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe. Ir a [ejemplos en Markdown](#ejemplos)
 
 ---
 # Práctica 1: TÍTULO PRÁCTICA
@@ -120,4 +120,4 @@ También es posible resaltar texto tipo código como `print("Hello, World!")`.
 
 ---
 
-Volver al [INICIO](#laboratorio de comunicaciones)
+Volver al [INICIO](#laboratorio)
