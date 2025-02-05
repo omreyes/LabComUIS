@@ -68,9 +68,11 @@ Ejemplo de referencia:
 ---
 # Ejemplos usando Markdown
 
+Volver al [INICIO](#laboratorio-de-comunicaciones)
+
 ## Inclusión de Imágenes
 ### Imagen de referencia dentro del repositorio:
-![Networking](my%file/test.png)
+![Networking](labcomuis/my%file/test.png)
 
 ### Imagen de fuente externa
 ![GNU Radio logo](https://kb.ettus.com/images/thumb/5/50/gnuradio.png/600px-gnuradio.png)
