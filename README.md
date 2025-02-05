@@ -30,7 +30,7 @@ Asimismo, los autores asumen plena responsabilidad por la información contenida
 Uso de IA: [Indicar si se usó IA y para qué aspectos específicos, por ejemplo: "Se utilizó ChatGPT para reformular secciones del texto y verificar gramática, pero el contenido técnico fue desarrollado íntegramente por los autores."]
 
 ---
-## [Contenido]
+## Contenido
 
 ### Resumen
 Descripción en no más de 150 palabras del contenido de la práctica. Debe ser conciso y brindar una idea clara sobre el trabajo realizado y sus conclusiones.
@@ -117,3 +117,7 @@ def hello_world():
 ```
 
 También es posible resaltar texto tipo código como `print("Hello, World!")`.
+
+---
+
+Volver al [INICIO.](#Laboratorio de Comunicaciones)
