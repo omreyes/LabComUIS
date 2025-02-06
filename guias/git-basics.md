@@ -76,3 +76,16 @@ git checkout main
 git merge practise1
 git push origin main
 ```
+
+## Step 8 (Optional): Keep or Delete Developer Branches
+After merging, decide whether to keep or delete the developer branches:
+- To delete a local branch:
+  ```bash
+  git branch -d practise1-devA
+  git branch -d practise1-devB
+  ```
+- To delete a remote branch:
+  ```bash
+  git push origin --delete practise1-devA
+  git push origin --delete practise1-devB
+  ```
