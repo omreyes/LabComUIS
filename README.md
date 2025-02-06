@@ -1,7 +1,7 @@
 # Laboratorio de Comunicaciones
 ## Universidad Industrial de Santander
 
-Utilice esta [plantilla](#practica-1:-titulo-practica) para presentar sus informes de laboratorio. 
+Utilice esta [plantilla](#integrantes) para presentar sus informes de laboratorio. 
 
 Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe. Ir a [ejemplos en Markdown](#ejemplos-usando-markdown)
 
@@ -12,7 +12,7 @@ Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe
 - Si emplea referencias disponibles en línea, agregue los hipervínculos respectivos.  
 
 ---
-# Practica 1: TITULO PRACTICA
+# Práctica 1: TÍTULO PRÁCTICA
 
 ### Integrantes
 - **PRIMER INTEGRANTE** - Código
