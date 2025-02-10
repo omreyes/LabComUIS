@@ -14,7 +14,7 @@ This guide explains how two collaborators can use branches in a GitHub repositor
 7. Once all work is completed, merge `practise1` into `main`.
 
 ## Step 1: Clone the Repository Using SSH
-(see [Setting Up SSH for GitHub Repositories](https://github.com/omreyes/LabComUIS/blob/main/guias/create-repository.md) for details about generation of SSH Keys)
+(see [Setting Up SSH for GitHub Repositories](https://github.com/omreyes/LabComUIS/blob/main/guides/create-repository.md) for details about generation of SSH Keys)
 ```bash
 git clone git@github.com:your-username/your-repo.git
 cd your-repo
