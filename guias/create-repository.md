@@ -27,7 +27,16 @@ If successful, you’ll see a message like:
 Hi your-username! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-## Step 4: Clone the Repository Using SSH
+## Step 4: Set your Identity in the Local Machine
+
+The first thing you should do before using Git in a local machine is to set your user name and email address. This is important because every Git commit uses this information, and it’s immutably baked into the commits you start creating. Run:
+```
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```
+**NOTE:** you need to do this only once if you pass the --global option, because then Git will always use that information for anything you do on that system. If you want to override this with a different name or email address for specific projects, you can run the command without the --global option when you’re in that project.
+
+## Step 5: Clone the Repository Using SSH
 ```bash
 git clone git@github.com:your-username/your-repo.git
 ```
