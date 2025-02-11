@@ -6,7 +6,7 @@
 #
 # GNU Radio Python Flow Graph
 # Title: Simple flowgraph to test GNU Radio
-# Author: Oscar Reyes
+# Author: Oscar Reyes / Efrén Acevedo
 # GNU Radio version: 3.10.10.0
 
 from PyQt5 import Qt
@@ -71,10 +71,10 @@ class simple_flowgraph(gr.top_block, Qt.QWidget):
         self.offset = offset = 0
         self.noise = noise = 0
         self.frequency = frequency = 1e3
-        self.fc = fc = 1e9
+        self.fc = fc = 100
         self.f_offset = f_offset = 0
         self.amplitude = amplitude = 1
-        self.GTX = GTX = 76
+        self.GTX = GTX = 30
 
         ##################################################
         # Blocks
@@ -134,7 +134,7 @@ class simple_flowgraph(gr.top_block, Qt.QWidget):
         for c in range(0, 1):
             self.tab_source_grid_layout_0.setColumnStretch(c, 1)
         self._phase_range = qtgui.Range(0, 2*np.pi, 0.1, 0, 200)
-        self._phase_win = qtgui.RangeWidget(self._phase_range, self.set_phase, "Phase", "counter_slider", float, QtCore.Qt.Horizontal)
+        self._phase_win = qtgui.RangeWidget(self._phase_range, self.set_phase, "Phase Rad", "counter_slider", float, QtCore.Qt.Horizontal)
         self.tab_source_grid_layout_0.addWidget(self._phase_win, 2, 1, 1, 1)
         for r in range(2, 3):
             self.tab_source_grid_layout_0.setRowStretch(r, 1)
@@ -147,7 +147,7 @@ class simple_flowgraph(gr.top_block, Qt.QWidget):
             self.tab_source_grid_layout_0.setRowStretch(r, 1)
         for c in range(1, 2):
             self.tab_source_grid_layout_0.setColumnStretch(c, 1)
-        self._noise_range = qtgui.Range(0, 5, 0.1, 0, 200)
+        self._noise_range = qtgui.Range(0, 5, 0.01, 0, 200)
         self._noise_win = qtgui.RangeWidget(self._noise_range, self.set_noise, "Noise voltage", "counter_slider", float, QtCore.Qt.Horizontal)
         self.tab_channel_grid_layout_0.addWidget(self._noise_win, 1, 0, 1, 1)
         for r in range(1, 2):
@@ -161,8 +161,8 @@ class simple_flowgraph(gr.top_block, Qt.QWidget):
             self.tab_source_grid_layout_0.setRowStretch(r, 1)
         for c in range(0, 1):
             self.tab_source_grid_layout_0.setColumnStretch(c, 1)
-        self._fc_range = qtgui.Range(8e8, 2e9, 50e6, 1e9, 200)
-        self._fc_win = qtgui.RangeWidget(self._fc_range, self.set_fc, "Carrier Frequency in Hz", "counter_slider", float, QtCore.Qt.Horizontal)
+        self._fc_range = qtgui.Range(50, 2200, 0.1, 100, 200)
+        self._fc_win = qtgui.RangeWidget(self._fc_range, self.set_fc, "Carrier Frequency in MHz", "counter_slider", float, QtCore.Qt.Horizontal)
         self.tab_usrp_grid_layout_0.addWidget(self._fc_win, 1, 0, 1, 1)
         for r in range(1, 2):
             self.tab_usrp_grid_layout_0.setRowStretch(r, 1)
@@ -197,13 +197,13 @@ class simple_flowgraph(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0.enable_tags(True)
         self.qtgui_time_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
         self.qtgui_time_sink_x_0.enable_autoscale(False)
-        self.qtgui_time_sink_x_0.enable_grid(False)
+        self.qtgui_time_sink_x_0.enable_grid(True)
         self.qtgui_time_sink_x_0.enable_axis_labels(True)
         self.qtgui_time_sink_x_0.enable_control_panel(False)
         self.qtgui_time_sink_x_0.enable_stem_plot(False)
 
 
-        labels = ['Signal 1', 'Signal 2', 'Signal 3', 'Signal 4', 'Signal 5',
+        labels = ['Real', 'Imag', 'Signal 3', 'Signal 4', 'Signal 5',
             'Signal 6', 'Signal 7', 'Signal 8', 'Signal 9', 'Signal 10']
         widths = [1, 1, 1, 1, 1,
             1, 1, 1, 1, 1]
@@ -251,7 +251,7 @@ class simple_flowgraph(gr.top_block, Qt.QWidget):
         self.qtgui_freq_sink_x_0.set_y_label('Relative Gain', 'dB')
         self.qtgui_freq_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, 0.0, 0, "")
         self.qtgui_freq_sink_x_0.enable_autoscale(False)
-        self.qtgui_freq_sink_x_0.enable_grid(False)
+        self.qtgui_freq_sink_x_0.enable_grid(True)
         self.qtgui_freq_sink_x_0.set_fft_average(1.0)
         self.qtgui_freq_sink_x_0.enable_axis_labels(True)
         self.qtgui_freq_sink_x_0.enable_control_panel(False)
@@ -292,7 +292,7 @@ class simple_flowgraph(gr.top_block, Qt.QWidget):
             block_tags=False)
         self.blocks_throttle2_0 = blocks.throttle( gr.sizeof_gr_complex*1, samp_rate, True, 0 if "auto" == "auto" else max( int(float(0.1) * samp_rate) if "auto" == "time" else int(0.1), 1) )
         self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, waveform, frequency, amplitude, offset, phase)
-        self._GTX_range = qtgui.Range(0, 88, 1, 76, 200)
+        self._GTX_range = qtgui.Range(0, 30, 1, 30, 200)
         self._GTX_win = qtgui.RangeWidget(self._GTX_range, self.set_GTX, "Tx gain in dB", "counter_slider", float, QtCore.Qt.Horizontal)
         self.tab_usrp_grid_layout_0.addWidget(self._GTX_win, 2, 0, 1, 1)
         for r in range(2, 3):

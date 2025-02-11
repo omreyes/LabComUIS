@@ -1,6 +1,6 @@
 options:
   parameters:
-    author: Oscar Reyes
+    author: "Oscar Reyes / Efr\xE9n Acevedo"
     catch_exceptions: 'True'
     category: '[GRC Hier Blocks]'
     cmake_opt: ''
@@ -36,7 +36,7 @@ blocks:
 - name: GTX
   id: variable_qtgui_range
   parameters:
-    comment: ''
+    comment: Ganancia del transmisor
     gui_hint: tab_usrp@0:2,0
     label: Tx gain in dB
     min_len: '200'
@@ -44,20 +44,20 @@ blocks:
     rangeType: float
     start: '0'
     step: '1'
-    stop: '88'
-    value: '76'
+    stop: '30'
+    value: '30'
     widget: counter_slider
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [760, 676.0]
+    coordinate: [584, 820.0]
     rotation: 0
     state: enabled
 - name: amplitude
   id: variable_qtgui_range
   parameters:
-    comment: ''
+    comment: "Bloque ajuste de variables \nmientras se ejecuta el flujograma"
     gui_hint: tab_source@0:1,0
     label: Amplitude
     min_len: '200'
@@ -72,13 +72,13 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [240, 132.0]
+    coordinate: [392, 148.0]
     rotation: 0
     state: enabled
 - name: f_offset
   id: variable_qtgui_range
   parameters:
-    comment: ''
+    comment: "Error de frecuencia \nen la transmisi\xF3n"
     gui_hint: tab_channel@0:2,0
     label: Frequency offset in Hz
     min_len: '200'
@@ -93,28 +93,28 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [168, 452.0]
+    coordinate: [1208, 148.0]
     rotation: 0
     state: enabled
 - name: fc
   id: variable_qtgui_range
   parameters:
-    comment: ''
+    comment: Frecuencia de portadora
     gui_hint: tab_usrp@0:1,0
-    label: Carrier Frequency in Hz
+    label: Carrier Frequency in MHz
     min_len: '200'
     orient: QtCore.Qt.Horizontal
     rangeType: float
-    start: 8e8
-    step: 50e6
-    stop: 2e9
-    value: 1e9
+    start: '50'
+    step: '0.1'
+    stop: '2200'
+    value: '100'
     widget: counter_slider
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [552, 676.0]
+    coordinate: [376, 820.0]
     rotation: 0
     state: enabled
 - name: frequency
@@ -135,20 +135,20 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 132.0]
+    coordinate: [536, 148.0]
     rotation: 0
     state: enabled
 - name: noise
   id: variable_qtgui_range
   parameters:
-    comment: ''
+    comment: Amplitud del ruido
     gui_hint: tab_channel@0:1,0
     label: Noise voltage
     min_len: '200'
     orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
-    step: '0.1'
+    step: '0.01'
     stop: '5'
     value: '0'
     widget: counter_slider
@@ -156,7 +156,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 452.0]
+    coordinate: [1056, 148.0]
     rotation: 0
     state: enabled
 - name: offset
@@ -177,7 +177,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [544, 132.0]
+    coordinate: [704, 148.0]
     rotation: 180
     state: enabled
 - name: phase
@@ -185,7 +185,7 @@ blocks:
   parameters:
     comment: ''
     gui_hint: tab_source@0:2,1
-    label: Phase
+    label: Phase Rad
     min_len: '200'
     orient: QtCore.Qt.Horizontal
     rangeType: float
@@ -198,25 +198,26 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [672, 132.0]
+    coordinate: [848, 148.0]
     rotation: 0
     state: enabled
 - name: samp_rate
   id: variable
   parameters:
-    comment: ''
+    comment: "Bloque usado para configurar \nvalores de variables que no se\nvan a\
+      \ actualizar durante la ejecuci\xF3n"
     value: '32000'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [208, 8.0]
+    coordinate: [240, 8.0]
     rotation: 0
     state: enabled
 - name: waveform
   id: variable_qtgui_chooser
   parameters:
-    comment: ''
+    comment: "Bloque usado para cambiar \nlos tipos de formas de onda"
     gui_hint: tab_source@0:0,0
     label: Waveform
     label0: ''
@@ -240,7 +241,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 132.0]
+    coordinate: [152, 148.0]
     rotation: 0
     state: enabled
 - name: analog_sig_source_x_0
@@ -249,7 +250,7 @@ blocks:
     affinity: ''
     alias: ''
     amp: amplitude
-    comment: ''
+    comment: "Fuente virtual, \ngenera diferentes formas de onda"
     freq: frequency
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -263,7 +264,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [200, 300.0]
+    coordinate: [64, 380.0]
     rotation: 0
     state: enabled
 - name: blocks_throttle2_0
@@ -271,7 +272,9 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    comment: ''
+    comment: 'Bloque que permite regular
+
+      el flujo de datos de las fuentes'
     ignoretag: 'True'
     limit: auto
     maximum: '0.1'
@@ -284,7 +287,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [792, 336.0]
+    coordinate: [608, 416.0]
     rotation: 0
     state: enabled
 - name: channels_channel_model_0
@@ -293,7 +296,7 @@ blocks:
     affinity: ''
     alias: ''
     block_tags: 'False'
-    comment: ''
+    comment: "Bloque usado para \ncrear un modelo de \ncanal"
     epsilon: '1.0'
     freq_offset: f_offset
     maxoutbuf: '0'
@@ -305,20 +308,20 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [512, 300.0]
+    coordinate: [360, 380.0]
     rotation: 0
     state: enabled
 - name: import_1
   id: import
   parameters:
     alias: ''
-    comment: ''
+    comment: "Usado para importar modulos \nde python adicionales"
     imports: import numpy as np
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [320, 8.0]
+    coordinate: [456, 8.0]
     rotation: 0
     state: enabled
 - name: qtgui_freq_sink_x_0
@@ -355,7 +358,7 @@ blocks:
     fc: '0'
     fftsize: '1024'
     freqhalf: 'True'
-    grid: 'False'
+    grid: 'True'
     gui_hint: 3,2,6,2
     label: Relative Gain
     label1: ''
@@ -399,7 +402,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1280, 364.0]
+    coordinate: [888, 684.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_0
@@ -432,11 +435,11 @@ blocks:
     comment: ''
     ctrlpanel: 'False'
     entags: 'True'
-    grid: 'False'
+    grid: 'True'
     gui_hint: 3,0,6,2
-    label1: Signal 1
+    label1: Real
     label10: Signal 10
-    label2: Signal 2
+    label2: Imag
     label3: Signal 3
     label4: Signal 4
     label5: Signal 5
@@ -496,7 +499,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1272, 260.0]
+    coordinate: [888, 572.0]
     rotation: 0
     state: enabled
 - name: tab_channel
@@ -530,7 +533,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [592, 4.0]
+    coordinate: [624, 4.0]
     rotation: 0
     state: enabled
 - name: tab_source
@@ -564,7 +567,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [416, 4.0]
+    coordinate: [992, 4.0]
     rotation: 0
     state: enabled
 - name: tab_usrp
@@ -598,7 +601,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [784, 4.0]
+    coordinate: [824, 4.0]
     rotation: 0
     state: enabled
 - name: uhd_usrp_sink_0_0
@@ -670,7 +673,7 @@ blocks:
     bw7: '0'
     bw8: '0'
     bw9: '0'
-    center_freq0: fc
+    center_freq0: fc*1e6
     center_freq1: '0'
     center_freq10: '0'
     center_freq11: '0'
@@ -711,7 +714,7 @@ blocks:
     clock_source5: ''
     clock_source6: ''
     clock_source7: ''
-    comment: ''
+    comment: "Bloque usado para conectar \nel PC con el USRP"
     dev_addr: '""'
     dev_args: ''
     gain0: GTX
@@ -875,7 +878,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [552, 532.0]
+    coordinate: [368, 668.0]
     rotation: 0
     state: disabled
 - name: virtual_sink_0
@@ -888,7 +891,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1016, 344.0]
+    coordinate: [840, 424.0]
     rotation: 0
     state: enabled
 - name: virtual_sink_0_0
@@ -901,7 +904,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [512, 464.0]
+    coordinate: [368, 592.0]
     rotation: 0
     state: disabled
 - name: virtual_source_0
@@ -914,7 +917,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1064, 280.0]
+    coordinate: [624, 640.0]
     rotation: 0
     state: enabled
 
