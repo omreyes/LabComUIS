@@ -88,7 +88,8 @@ Transmitir señales usando el USRP 2920 y medir parámetros clave como potencia,
 ### **Procedimiento**
 1. **Configurar el USRP 2920**:
    - Configurar el flujograma en GNU Radio para transmitir una señal a través del USRP (habilite y deshabilite los bloques correspondientes).
-   - Ajustar la frecuencia y ganancia del USRP.
+   - Identifique el bloque de frecuencia de muestreo (samp_rate) y ajuste su valor a 1 MHz (1e6).
+   - Verifique el efecto de modoficar la frecuencia y ganancia del USRP. 
    - Varíe la frecuencia de portadora para evaluar la respuesta en frecuencia del canal.
    - Compare los resultados de transmitir usando un cable y usando antenas.
 
