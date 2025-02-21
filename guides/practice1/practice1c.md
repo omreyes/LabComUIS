@@ -29,19 +29,20 @@ Familiarizarse con las especificaciones técnicas de los equipos de laboratorio 
    - Seleccionar las **5 especificaciones** que consideren **más relevantes** de cada equipo. 
 
 3. **Configuración de los Equipos**:
-   - **USRP 2920**: Identificar el rango de frecuencia y ganancia configurable mediante el comando `uhd_usrp_probe`.
+   - **USRP 2920**: Identificar el rango de frecuencia y ganancia configurable del radio. Para esto, conecte la alimentación y el cable de red al radio, y desde un terminal (Ctrl + Alt + T) ejecute el comando `uhd_usrp_probe`.
    - **Osciloscopio R&S RTB2004**: Identificar el ancho de banda máximo, resolución vertical y tipos de mediciones soportadas.
    - **Analizador de Espectros R&S FPC1000**: Identificar el rango de frecuencia, resolución y figura de ruido.
-   - 
+
 ### **Preguntas Orientadoras**
 1. ¿Cuál es el rango de frecuencia del USRP 2920 y cómo se compara con el del analizador de espectros?
 2. ¿Qué parámetros del USRP 2920 se deben configurar para transmitir una señal en una frecuencia específica?
 3. ¿Cómo se configura el osciloscopio para medir la amplitud y la frecuencia de una señal?
 4. ¿Qué diferencia hay entre medir una señal en el dominio del tiempo (osciloscopio) y en el dominio de la frecuencia (analizador de espectros)?
-5. ¿Cómo se mide el piso de ruido en el analizador de espectros?
+5. ¿Cómo se mide el piso de ruido en el analizador de espectros? ¿Cómo afecta la frecuencia central, SPAN y RBW la medida de piso de ruido? ¿Por qué?
 
 ### **Evidencia**
 - Lista con las 5 especificaciones más relevantes de cada equipo.
+- Realice una medición de piso de ruido normalizado.
 
 ---
 
@@ -51,32 +52,32 @@ Familiarizarse con las especificaciones técnicas de los equipos de laboratorio 
 Generar y analizar señales en GNU Radio para entender cómo se comportan diferentes formas de onda en tiempo y frecuencia.
 
 ### **Procedimiento**
-1. **Abrir GNU Radio**:
-   - Abrir GNU Radio Companion (GRC) (`gnuradio-companion`).
-   - Cargar el flujograma [`simple_flowgraph.grc`](https://github.com/omreyes/LabComUIS/blob/develop/guides/practice1/simple_flowgraph.grc).
+1. **Iniciar GNU Radio**:
+   - Ejecute GNU Radio Companion (GRC) (`gnuradio-companion`).
+   - Cargue el flujograma [`simple_flowgraph.grc`](https://github.com/omreyes/LabComUIS/blob/develop/guides/practice1/simple_flowgraph.grc).
+   - Identifique los bloques principales: `Signal Source`, `Throttle`, `QT GUI Time Sink` y `QT GUI Frequency Sink`.
 
-2. **Configurar el Flujograma**:
-   - Identificar los bloques principales: `Signal Source`, `Throttle`, `QT GUI Time Sink` y `QT GUI Frequency Sink`.
-   - Cambiar la forma de onda en el bloque `Signal Source` (seno, coseno, cuadrada, triangular, etc.).
-   - Ajustar la frecuencia y amplitud de la señal generada.
-   - Modifique los parámetros del modelo de canal.
-
-3. **Ejecutar el Flujograma**:
-   - Ejecutar el flujograma y observar las señales generadas en las ventanas de tiempo (`Time Sink`) y frecuencia (`Frequency Sink`).
-
-4. **Análisis de las Señales**:
-   - Comparar las formas de onda en el dominio del tiempo y la frecuencia.
-   - Anotar las diferencias entre las señales generadas con diferentes formas de onda.
+2. **Ejecutar el Flujograma**:
+   - Ejecute el flujograma y observe los diferentes controles (Source Controls, Channel Controls, USRP Controls), así como las señales generadas en las ventanas de tiempo (`Time Sink`) y frecuencia (`Frequency Sink`).
+   - Identifique y relacione los bloques presentes en el flujograma con lo observado en la ventana de ejecución.
+  
+3. **Análisis de Señales** 
+   - Analice y valide los resultados en el dominio del tiempo y de frecuencia si se modifica:
+     - el tipo de dato de la fuente (compleja o flotante)
+     - la forma de onda 
+     - la frecuencia y fase de la señal
+     - la amplitud de la señal generada.
+   - Modifique el nivel de ruido del modelo de canal y analice el efecto en tiempo y frecuencia.
 
 ### **Preguntas Orientadoras**
-1. ¿Cómo afecta la forma de onda a la distribución de energía en el dominio de la frecuencia?
-2. ¿Qué sucede con la señal en el dominio del tiempo si se aumenta la frecuencia en el bloque `Signal Source`?
-3. ¿Cómo se relaciona la amplitud de la señal con la potencia observada en el dominio de la frecuencia?
-4. ¿Qué diferencias se observan entre una señal senoidal y una señal cuadrada en el dominio de la frecuencia?
-5. ¿Cómo se podría modificar el flujograma para generar una señal con ruido añadido?
+1. ¿Cómo se puede explicar matemáticamente la diferencia entre una fuente de tipo flotante y una de tipo complejo?
+2. ¿Cómo afecta la forma de onda a la distribución de energía (potencia) en el dominio de la frecuencia?
+3. ¿Qué sucede con la señal en el dominio del tiempo y la frecuencia si se modifican los diferentes parámetros de la fuente? ¿Lo observado corresponde a lo esperado teóricamente?
+4. ¿Cómo se relaciona la amplitud de la señal con la potencia observada en el dominio de la frecuencia?
+5. ¿Qué diferencias se observan entre una señal senoidal y una señal cuadrada en el dominio de la frecuencia?
 
-### **Evidencia**
-- Capturas de pantalla de las señales generadas en el dominio del tiempo y la frecuencia.
+### **Evidencias**
+- Capturas de pantalla de señales generadas en el dominio del tiempo y la frecuencia que evidencien cada una de las comparaciones realizadas.
 
 ---
 
@@ -87,28 +88,34 @@ Transmitir señales usando el USRP 2920 y medir parámetros clave como potencia,
 
 ### **Procedimiento**
 1. **Configurar el USRP 2920**:
-   - Configurar el flujograma en GNU Radio para transmitir una señal a través del USRP (habilite y deshabilite los bloques correspondientes).
-   - Identifique el bloque de frecuencia de muestreo (samp_rate) y ajuste su valor a 1 MHz (1e6).
-   - Verifique el efecto de modoficar la frecuencia y ganancia del USRP. 
-   - Varíe la frecuencia de portadora para evaluar la respuesta en frecuencia del canal.
-   - Compare los resultados de transmitir usando un cable y usando antenas.
+   - Configure el flujograma en GNU Radio para transmitir una señal a través del USRP. Habilite o deshabilite los bloques correspondientes (Channel Model, Throttle, UHD: USRP Sink, Virtual Sink). Para esto seleccione el bloque deseado y presionando `E` (enable) o `D` (disable), respectivamente.
+   - Identifique el bloque de frecuencia de muestreo (samp_rate) y observe el efecto de cambiar su valor (e.g. 10 kHz).
+   - Verifique el efecto de modificar la frecuencia y ganancia del USRP. 
 
 2. **Medición con el Analizador de Espectros**:
-   - Conectar la salida del USRP al analizador de espectros R&S FPC1000.
-   - Cambiar la forma de onda en el bloque `Signal Source` (seno, coseno, cuadrada, triangular, etc.).
-   - Ajustar la frecuencia y amplitud de la señal generada.
-   - Medir la potencia de la señal transmitida, el ancho de banda y el piso de ruido.
+   - Conecte la salida del USRP al analizador de espectros.
+   - Mida el piso de ruido normalizado a la frecuencia de portadora que va a utilizar.
+   - Compare el espectro de la señal observada en el analizador de espectros con la observada en la pantalla de simulación. Tenga en cuenta que el radio (USRP) equivale al diagrama de bloques mostrado en la figura.
+   - Analice y valide los resultados en el dominio de la frecuencia si se modifica:
+     - el tipo de dato de la fuente (compleja o flotante)
+     - la forma de onda 
+     - la frecuencia y fase de la señal
+     - la amplitud de la señal generada.
+   - Mida potencia de la señal transmitida y ancho de banda de diferentes señales generadas.
+   - Conecte una antena apropiada a la entrada del analizador de espectros y observe el espectro de una señal FM (las estaciones FM se sitúan entre los 88 MHz y 108 MHz). Mida su ancho de banda y relación señal a ruido. 
    - Determinar la máxima potencia de transmisión.
-   - Varíe la frecuencia de portadora para evaluar la respuesta en frecuencia del canal.
+   - Evalúe la respuesta en frecuencia del canal midiendo los cambios de ganancia del sistema cuando varía la frecuencia de portadora.
    - Compare los resultados de transmitir usando un cable y usando antenas.
 
-3. **Medición con el Osciloscopio**:
-   - Conectar el osciloscopio R&S RTB2004 al USRP.
-   - Visualizar la señal en el dominio del tiempo.
-   - Medir la amplitud y el tiempo de subida de la señal cuadrada.
-   - Mida la potencia de las señales transmitidas y contrástela con la medición obtenida con el analizador de espectros.
+4. **Medición con el Osciloscopio**:
+   - Analice y valide los resultados en el dominio del tiempo si se modifica:
+     - el tipo de dato de la fuente (compleja o flotante)
+     - la forma de onda 
+     - la frecuencia y fase de la señal
+     - la amplitud de la señal generada.
+  - Contraste estos resultados con los obtenidos con el analizador de espectros.
 
-4. **Cálculo de la Relación Señal a Ruido (SNR)**:
+5. **Cálculo de la Relación Señal a Ruido (SNR)**:
    - Usar las mediciones de potencia y piso de ruido para calcular la SNR de algunas de las señales generadas.
    - Anotar el valor de la SNR en dB.
 
@@ -118,9 +125,11 @@ Transmitir señales usando el USRP 2920 y medir parámetros clave como potencia,
 3. ¿Cómo se mide el ancho de banda de la señal transmitida en el analizador de espectros?
 4. ¿Cómo se calcula la relación señal a ruido (SNR) a partir de las mediciones de potencia y piso de ruido?
 5. ¿Qué diferencias se observan en las mediciones de potencia cuando se varía la ganancia del USRP?
+6. ¿Es posible medir o estimar la potencia de la señal observada en el osciloscopio? ¿Por qué?
 
 ### **Evidencia**
-- Capturas de pantalla de las mediciones realizadas en el analizador de espectros y el osciloscopio.
+- Capturas de pantalla de señales generadas en el dominio del tiempo y la frecuencia que evidencien las principales comparaciones realizadas.
+- Captura de la señal FM usada para medición de ancho de banda.
 
 ---
 
@@ -131,16 +140,16 @@ Analizar los resultados obtenidos y sacar conclusiones sobre el comportamiento d
 
 ### **Para la Elaboración del Informe**
 1. **Comparar Resultados**:
-   - Comparar los resultados obtenidos en las simulaciones y las transmisiones reales.
-   - Discutir las diferencias entre las mediciones realizadas con el osciloscopio y el analizador de espectros.
+   - Compare los resultados obtenidos en las simulaciones y las transmisiones reales.
+   - Discuta las diferencias entre las mediciones realizadas con el osciloscopio y el analizador de espectros.
 
 2. **Reflexionar sobre la SNR**:
-   - Analizar la importancia de la relación señal a ruido (SNR) en las comunicaciones inalámbricas.
-   - Discutir cómo el piso de ruido afecta la capacidad de detectar señales débiles.
+   - Analice la importancia de la relación señal a ruido (SNR) en las comunicaciones inalámbricas.
+   - Discuta cómo el piso de ruido afecta la capacidad de detectar señales débiles.
 
 3. **Conclusiones Finales**:
-   - Escribir conclusiones basadas en los resultados obtenidos.
-   - Reflexionar sobre las limitaciones de los equipos y cómo se podrían mejorar las mediciones.
+   - Escriba conclusiones basadas en los resultados obtenidos.
+   - Reflexe sobre las limitaciones de los equipos y cómo se podrían mejorar las mediciones.
 
 ### **Preguntas Orientadoras**
 1. ¿Qué conclusiones se pueden obtener sobre la relación entre la potencia de la señal y la calidad de la comunicación?
