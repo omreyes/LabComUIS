@@ -254,7 +254,7 @@ class simple_flowgraph(gr.top_block, Qt.QWidget):
             1024, #size
             window.WIN_RECTANGULAR, #wintype
             0, #fc
-            (samp_rate/2), #bw
+            samp_rate, #bw
             "", #name
             1,
             None # parent
@@ -363,7 +363,7 @@ class simple_flowgraph(gr.top_block, Qt.QWidget):
         self.analog_sig_source_x_0.set_sampling_freq(self.samp_rate)
         self.analog_sig_source_x_0_0.set_sampling_freq(self.samp_rate)
         self.blocks_throttle2_0.set_sample_rate(self.samp_rate)
-        self.qtgui_freq_sink_x_0.set_frequency_range(0, (self.samp_rate/2))
+        self.qtgui_freq_sink_x_0.set_frequency_range(0, self.samp_rate)
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
 
     def get_phase(self):
