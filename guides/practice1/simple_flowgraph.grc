@@ -313,7 +313,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [320.0, 640]
+    coordinate: [312.0, 640]
     rotation: 90
     state: enabled
 - name: blocks_selector_0
