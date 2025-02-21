@@ -957,7 +957,7 @@ blocks:
   id: virtual_sink
   parameters:
     alias: ''
-    comment: ''
+    comment: Source + Channel model
     stream_id: source
   states:
     bus_sink: false
@@ -970,7 +970,7 @@ blocks:
   id: virtual_sink
   parameters:
     alias: ''
-    comment: ''
+    comment: Source without channel model
     stream_id: source
   states:
     bus_sink: false
