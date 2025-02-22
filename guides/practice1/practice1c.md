@@ -56,6 +56,7 @@ Generar y analizar señales en GNU Radio para entender cómo se comportan difere
    - Ejecute GNU Radio Companion (GRC) (`gnuradio-companion`).
    - Cargue el flujograma [`simple_flowgraph.grc`](https://github.com/omreyes/LabComUIS/blob/develop/guides/practice1/simple_flowgraph.grc).
    - Identifique los bloques principales: `Signal Source`, `Throttle`, `QT GUI Time Sink` y `QT GUI Frequency Sink`.
+   - Configure la frecuencia de muestreo (samp_rate) en 20 kHz.
 
 2. **Ejecutar el Flujograma**:
    - Ejecute el flujograma y observe los diferentes controles (Source Controls, Channel Controls, USRP Controls), así como las señales generadas en las ventanas de tiempo (`Time Sink`) y frecuencia (`Frequency Sink`).
@@ -90,6 +91,7 @@ Transmitir señales usando el USRP 2920 y medir parámetros clave como potencia,
 1. **Configurar el USRP 2920**:
    - Configure el flujograma en GNU Radio para transmitir una señal a través del USRP. Habilite o deshabilite los bloques correspondientes (Channel Model, Throttle, UHD: USRP Sink, Virtual Sink). Para esto seleccione el bloque deseado y presionando `E` (enable) o `D` (disable), respectivamente.
    - Identifique el bloque de frecuencia de muestreo (samp_rate) y observe el efecto de cambiar su valor (e.g. 10 kHz).
+   - Configure la frecuencia de muestreo (samp_rate) en 1 MHz.
    - Verifique el efecto de modificar la frecuencia y ganancia del USRP. 
 
 2. **Medición con el Analizador de Espectros**:
