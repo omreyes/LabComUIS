@@ -144,12 +144,12 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         self.tab_plots_layout_0 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.tab_plots_widget_0)
         self.tab_plots_grid_layout_0 = Qt.QGridLayout()
         self.tab_plots_layout_0.addLayout(self.tab_plots_grid_layout_0)
-        self.tab_plots.addTab(self.tab_plots_widget_0, 'TX')
+        self.tab_plots.addTab(self.tab_plots_widget_0, 'Time Domain Plots')
         self.tab_plots_widget_1 = Qt.QWidget()
         self.tab_plots_layout_1 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.tab_plots_widget_1)
         self.tab_plots_grid_layout_1 = Qt.QGridLayout()
         self.tab_plots_layout_1.addLayout(self.tab_plots_grid_layout_1)
-        self.tab_plots.addTab(self.tab_plots_widget_1, 'RX')
+        self.tab_plots.addTab(self.tab_plots_widget_1, 'Frequency Domain Plots')
         self.top_grid_layout.addWidget(self.tab_plots, 3, 0, 6, 4)
         for r in range(3, 9):
             self.top_grid_layout.setRowStretch(r, 1)
@@ -277,7 +277,7 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0_0.set_update_time(0.10)
         self.qtgui_time_sink_x_0_0.set_y_axis(-1, 1)
 
-        self.qtgui_time_sink_x_0_0.set_y_label('Amplitude', "")
+        self.qtgui_time_sink_x_0_0.set_y_label('Amplitude AFTER Filter', 'V')
 
         self.qtgui_time_sink_x_0_0.enable_tags(True)
         self.qtgui_time_sink_x_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
@@ -317,11 +317,11 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
             self.qtgui_time_sink_x_0_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_time_sink_x_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0.qwidget(), Qt.QWidget)
-        self.tab_plots_grid_layout_1.addWidget(self._qtgui_time_sink_x_0_0_win, 0, 0, 6, 2)
+        self.tab_plots_grid_layout_0.addWidget(self._qtgui_time_sink_x_0_0_win, 0, 2, 6, 2)
         for r in range(0, 6):
-            self.tab_plots_grid_layout_1.setRowStretch(r, 1)
-        for c in range(0, 2):
-            self.tab_plots_grid_layout_1.setColumnStretch(c, 1)
+            self.tab_plots_grid_layout_0.setRowStretch(r, 1)
+        for c in range(2, 4):
+            self.tab_plots_grid_layout_0.setColumnStretch(c, 1)
         self.qtgui_time_sink_x_0 = qtgui.time_sink_c(
             1024, #size
             samp_rate, #samp_rate
@@ -332,7 +332,7 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0.set_update_time(0.10)
         self.qtgui_time_sink_x_0.set_y_axis(-1, 1)
 
-        self.qtgui_time_sink_x_0.set_y_label('Amplitude', "")
+        self.qtgui_time_sink_x_0.set_y_label('Amplitude BEFORE Filter', 'V')
 
         self.qtgui_time_sink_x_0.enable_tags(True)
         self.qtgui_time_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
@@ -388,7 +388,7 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         )
         self.qtgui_freq_sink_x_0_0.set_update_time(0.10)
         self.qtgui_freq_sink_x_0_0.set_y_axis((-140), 10)
-        self.qtgui_freq_sink_x_0_0.set_y_label('Relative Gain', 'dB')
+        self.qtgui_freq_sink_x_0_0.set_y_label('Relative Gain AFTER Filter', 'dB')
         self.qtgui_freq_sink_x_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, 0.0, 0, "")
         self.qtgui_freq_sink_x_0_0.enable_autoscale(False)
         self.qtgui_freq_sink_x_0_0.enable_grid(True)
@@ -434,7 +434,7 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         )
         self.qtgui_freq_sink_x_0.set_update_time(0.10)
         self.qtgui_freq_sink_x_0.set_y_axis((-140), 10)
-        self.qtgui_freq_sink_x_0.set_y_label('Relative Gain', 'dB')
+        self.qtgui_freq_sink_x_0.set_y_label('Relative Gain BEFORE Filter', 'dB')
         self.qtgui_freq_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, 0.0, 0, "")
         self.qtgui_freq_sink_x_0.enable_autoscale(False)
         self.qtgui_freq_sink_x_0.enable_grid(True)
@@ -464,11 +464,11 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
             self.qtgui_freq_sink_x_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_freq_sink_x_0_win = sip.wrapinstance(self.qtgui_freq_sink_x_0.qwidget(), Qt.QWidget)
-        self.tab_plots_grid_layout_0.addWidget(self._qtgui_freq_sink_x_0_win, 0, 2, 6, 2)
+        self.tab_plots_grid_layout_1.addWidget(self._qtgui_freq_sink_x_0_win, 0, 0, 6, 2)
         for r in range(0, 6):
-            self.tab_plots_grid_layout_0.setRowStretch(r, 1)
-        for c in range(2, 4):
-            self.tab_plots_grid_layout_0.setColumnStretch(c, 1)
+            self.tab_plots_grid_layout_1.setRowStretch(r, 1)
+        for c in range(0, 2):
+            self.tab_plots_grid_layout_1.setColumnStretch(c, 1)
         self.channels_channel_model_0 = channels.channel_model(
             noise_voltage=noise,
             frequency_offset=(desv_freq/samp_rate),
@@ -476,7 +476,7 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
             taps=[1.0],
             noise_seed=0,
             block_tags=False)
-        self.blocks_wavfile_source_0 = blocks.wavfile_source('..\\..\\\\samples\\file_example_WAV_1MG.wav', True)
+        self.blocks_wavfile_source_0 = blocks.wavfile_source('..\\..\\samples\\file_example_WAV_1MG.wav', True)
         self.blocks_throttle2_0 = blocks.throttle( gr.sizeof_gr_complex*1, samp_rate, True, 0 if "auto" == "auto" else max( int(float(0.1) * samp_rate) if "auto" == "time" else int(0.1), 1) )
         self.blocks_selector_1 = blocks.selector(gr.sizeof_float*1,0,sink_type)
         self.blocks_selector_1.set_enabled(True)
@@ -523,14 +523,14 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_float_to_complex_0, 0), (self.blocks_selector_0, 1))
         self.connect((self.blocks_float_to_complex_0_0, 0), (self.blocks_selector_0, 2))
         self.connect((self.blocks_float_to_complex_0_0_0, 0), (self.blocks_selector_0, 3))
-        self.connect((self.blocks_selector_0, 0), (self.blocks_throttle2_0, 0))
-        self.connect((self.blocks_selector_0, 0), (self.qtgui_freq_sink_x_0, 0))
-        self.connect((self.blocks_selector_0, 0), (self.qtgui_time_sink_x_0, 0))
+        self.connect((self.blocks_selector_0, 0), (self.channels_channel_model_0, 0))
         self.connect((self.blocks_selector_1, 1), (self.audio_sink_0, 0))
         self.connect((self.blocks_selector_1, 0), (self.blocks_null_sink_0, 0))
-        self.connect((self.blocks_throttle2_0, 0), (self.channels_channel_model_0, 0))
+        self.connect((self.blocks_throttle2_0, 0), (self.band_pass_filter_0, 0))
         self.connect((self.blocks_wavfile_source_0, 0), (self.blocks_float_to_complex_0_0_0, 0))
-        self.connect((self.channels_channel_model_0, 0), (self.band_pass_filter_0, 0))
+        self.connect((self.channels_channel_model_0, 0), (self.blocks_throttle2_0, 0))
+        self.connect((self.channels_channel_model_0, 0), (self.qtgui_freq_sink_x_0, 0))
+        self.connect((self.channels_channel_model_0, 0), (self.qtgui_time_sink_x_0, 0))
 
 
     def closeEvent(self, event):
