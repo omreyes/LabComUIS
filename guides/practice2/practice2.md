@@ -15,6 +15,11 @@ Este enfoque permitirá no solo verificar la teoría, sino también desarrollar 
 - **Analizador de Espectros R&S FPC1000:** Para mediciones en el dominio de la frecuencia.
 - **Computador con GNU Radio:** Para simulación y generación de señales usando el USRP 2920.
 - **Cables y conectores:** Para interconexión de equipos.
+- **Audífonos y micrófono** (opcional, debe traerlo cada grupo)
+
+### Ajustes preliminares
+
+En el [flujograma](filters_flowgraph.grc) propuesto para esta práctica, se incluye un bloque "Wav File Source". **Antes** de ejecutar el flujograma, seleccione un archivo WAV para ser usado por este bloque. Algunos archivos WAV de ejemplo los puede encontrar en: [LabComUIS/samples/](../../samples/) 
 
 ---
 
