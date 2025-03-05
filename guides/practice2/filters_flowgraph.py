@@ -523,14 +523,14 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_float_to_complex_0, 0), (self.blocks_selector_0, 1))
         self.connect((self.blocks_float_to_complex_0_0, 0), (self.blocks_selector_0, 2))
         self.connect((self.blocks_float_to_complex_0_0_0, 0), (self.blocks_selector_0, 3))
-        self.connect((self.blocks_selector_0, 0), (self.blocks_throttle2_0, 0))
-        self.connect((self.blocks_selector_0, 0), (self.qtgui_freq_sink_x_0, 0))
-        self.connect((self.blocks_selector_0, 0), (self.qtgui_time_sink_x_0, 0))
+        self.connect((self.blocks_selector_0, 0), (self.channels_channel_model_0, 0))
         self.connect((self.blocks_selector_1, 1), (self.audio_sink_0, 0))
         self.connect((self.blocks_selector_1, 0), (self.blocks_null_sink_0, 0))
-        self.connect((self.blocks_throttle2_0, 0), (self.channels_channel_model_0, 0))
+        self.connect((self.blocks_throttle2_0, 0), (self.band_pass_filter_0, 0))
         self.connect((self.blocks_wavfile_source_0, 0), (self.blocks_float_to_complex_0_0_0, 0))
-        self.connect((self.channels_channel_model_0, 0), (self.band_pass_filter_0, 0))
+        self.connect((self.channels_channel_model_0, 0), (self.blocks_throttle2_0, 0))
+        self.connect((self.channels_channel_model_0, 0), (self.qtgui_freq_sink_x_0, 0))
+        self.connect((self.channels_channel_model_0, 0), (self.qtgui_time_sink_x_0, 0))
 
 
     def closeEvent(self, event):

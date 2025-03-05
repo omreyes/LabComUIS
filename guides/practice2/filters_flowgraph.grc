@@ -259,8 +259,8 @@ blocks:
 - name: sink_type
   id: variable_qtgui_chooser
   parameters:
-    comment: "Bloque usado para cambiar \nel tipo de dato de la fuente\n(complejo\
-      \ o flotante)"
+    comment: "Bloque usado para habilitar \no deshabilitar la salida de \naudio del\
+      \ sistema."
     gui_hint: tab_source@0:0,1
     label: Output
     label0: ''
@@ -284,7 +284,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1888, 172.0]
+    coordinate: [1888, 180.0]
     rotation: 0
     state: enabled
 - name: source_type
@@ -408,7 +408,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1968, 848.0]
+    coordinate: [2200, 952.0]
     rotation: 0
     state: enabled
 - name: audio_source_0
@@ -436,7 +436,7 @@ blocks:
     affinity: ''
     alias: ''
     beta: '6.76'
-    comment: ''
+    comment: "Modela el filtro de recepci\xF3n."
     decim: '1'
     gain: '1'
     high_cutoff_freq: f_max
@@ -452,7 +452,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1456, 488.0]
+    coordinate: [1688, 592.0]
     rotation: 0
     state: enabled
 - name: blocks_complex_to_real_0
@@ -468,7 +468,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1656.0, 640]
+    coordinate: [1888.0, 744]
     rotation: 270
     state: enabled
 - name: blocks_float_to_complex_0
@@ -533,7 +533,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1968, 800.0]
+    coordinate: [2200, 904.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0
@@ -579,7 +579,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1712, 772.0]
+    coordinate: [1944, 876.0]
     rotation: 0
     state: enabled
 - name: blocks_throttle2_0
@@ -587,8 +587,8 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    comment: "Bloque que permite regular \nen SIMULACI\xD3N el flujo de datos.\nNo\
-      \ se requiere si se activa el USRP."
+    comment: "Deshabilite este bloque si usa un \nUSRP. Solo se usa en SIMULACI\xD3\
+      N \npara regular el flujo de datos."
     ignoretag: 'True'
     limit: auto
     maximum: '0.1'
@@ -601,7 +601,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [664, 456.0]
+    coordinate: [984, 464.0]
     rotation: 0
     state: enabled
 - name: blocks_wavfile_source_0
@@ -609,7 +609,9 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    comment: ''
+    comment: 'Recuerde usar "/" en Linux y "\" en Windows
+
+      para describir la ruta del archivo'
     file: ..\..\\samples\file_example_WAV_1MG.wav
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -628,7 +630,7 @@ blocks:
     affinity: ''
     alias: ''
     block_tags: 'False'
-    comment: "Bloque usado para \ncrear un modelo de \ncanal"
+    comment: ''
     epsilon: '1.0'
     freq_offset: desv_freq/samp_rate
     maxoutbuf: '0'
@@ -640,7 +642,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [920, 420.0]
+    coordinate: [680, 428.0]
     rotation: 0
     state: enabled
 - name: import_1
@@ -734,7 +736,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [976, 868.0]
+    coordinate: [848, 956.0]
     rotation: 0
     state: enabled
 - name: qtgui_freq_sink_x_0_0
@@ -815,7 +817,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1416, 876.0]
+    coordinate: [1288, 964.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_0
@@ -912,7 +914,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [976, 788.0]
+    coordinate: [848, 860.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_0_0
@@ -1009,7 +1011,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1416, 780.0]
+    coordinate: [1288, 868.0]
     rotation: 0
     state: enabled
 - name: tab_channel
@@ -1258,7 +1260,8 @@ blocks:
     clock_source5: ''
     clock_source6: ''
     clock_source7: ''
-    comment: "Bloque usado para conectar \nel PC con el USRP"
+    comment: "Deshabilite este bloque si \nno hace uso del USRP. \nEste es el transmisor\
+      \ del sistema."
     dev_addr: '""'
     dev_args: ''
     gain0: GTX
@@ -1422,7 +1425,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1016, 980.0]
+    coordinate: [848, 1060.0]
     rotation: 0
     state: disabled
 - name: uhd_usrp_source_0
@@ -1535,7 +1538,8 @@ blocks:
     clock_source5: ''
     clock_source6: ''
     clock_source7: ''
-    comment: ''
+    comment: "Deshabilite este bloque si \nno hace uso del receptor USRP. \nEste es\
+      \ el receptor del sistema."
     dc_offs0: 0+0j
     dc_offs1: 0+0j
     dc_offs10: 0+0j
@@ -1858,7 +1862,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1432, 972.0]
+    coordinate: [1288, 1068.0]
     rotation: 0
     state: disabled
 - name: virtual_sink_0
@@ -1871,46 +1875,48 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1768, 552.0]
+    coordinate: [2000, 656.0]
     rotation: 0
     state: enabled
 - name: virtual_sink_0_0
   id: virtual_sink
   parameters:
     alias: ''
-    comment: Source without channel model
+    comment: "Fuente + Efectos de \nmodelo de canal"
     stream_id: source
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [704, 728.0]
+    coordinate: [1064, 672.0]
     rotation: 0
     state: enabled
 - name: virtual_sink_1
   id: virtual_sink
   parameters:
     alias: ''
-    comment: ''
+    comment: "Deshabilite este bloque si usa un \nUSRP. Solo se usa en SIMULACI\xD3\
+      N \npara conectar la se\xF1al proveniente\ndel modelo de canal inal\xE1mbrico."
     stream_id: before_filter
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1216, 464.0]
+    coordinate: [1240, 472.0]
     rotation: 0
     state: enabled
 - name: virtual_sink_1_0
   id: virtual_sink
   parameters:
     alias: ''
-    comment: ''
+    comment: "Deshabilite este bloque si \nno hace uso del USRP (ni como \nTX, ni\
+      \ como RX). \nEste bloque le pasa la se\xF1al \nrecibida por el USRP al filtro."
     stream_id: before_filter
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1768, 1000.0]
+    coordinate: [1648, 1128.0]
     rotation: 0
     state: disabled
 - name: virtual_source_0
@@ -1923,9 +1929,24 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [704, 808.0]
+    coordinate: [576, 896.0]
     rotation: 0
     state: enabled
+- name: virtual_source_0_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: 'Deshabilite este bloque
+
+      si usa el RX USRP'
+    stream_id: source
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1352, 1288.0]
+    rotation: 0
+    state: disabled
 - name: virtual_source_1
   id: virtual_source
   parameters:
@@ -1936,7 +1957,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1216, 552.0]
+    coordinate: [1448, 656.0]
     rotation: 0
     state: enabled
 - name: virtual_source_1_0
@@ -1949,7 +1970,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1176, 800.0]
+    coordinate: [1048, 888.0]
     rotation: 0
     state: enabled
 
@@ -1963,17 +1984,18 @@ connections:
 - [blocks_float_to_complex_0, '0', blocks_selector_0, '1']
 - [blocks_float_to_complex_0_0, '0', blocks_selector_0, '2']
 - [blocks_float_to_complex_0_0_0, '0', blocks_selector_0, '3']
-- [blocks_selector_0, '0', blocks_throttle2_0, '0']
-- [blocks_selector_0, '0', virtual_sink_0_0, '0']
+- [blocks_selector_0, '0', channels_channel_model_0, '0']
 - [blocks_selector_1, '0', blocks_null_sink_0, '0']
 - [blocks_selector_1, '1', audio_sink_0, '0']
-- [blocks_throttle2_0, '0', channels_channel_model_0, '0']
+- [blocks_throttle2_0, '0', virtual_sink_1, '0']
 - [blocks_wavfile_source_0, '0', blocks_float_to_complex_0_0_0, '0']
-- [channels_channel_model_0, '0', virtual_sink_1, '0']
+- [channels_channel_model_0, '0', blocks_throttle2_0, '0']
+- [channels_channel_model_0, '0', virtual_sink_0_0, '0']
 - [uhd_usrp_source_0, '0', virtual_sink_1_0, '0']
 - [virtual_source_0, '0', qtgui_freq_sink_x_0, '0']
 - [virtual_source_0, '0', qtgui_time_sink_x_0, '0']
 - [virtual_source_0, '0', uhd_usrp_sink_0_0, '0']
+- [virtual_source_0_0, '0', virtual_sink_1_0, '0']
 - [virtual_source_1, '0', band_pass_filter_0, '0']
 - [virtual_source_1_0, '0', qtgui_freq_sink_x_0_0, '0']
 - [virtual_source_1_0, '0', qtgui_time_sink_x_0_0, '0']
