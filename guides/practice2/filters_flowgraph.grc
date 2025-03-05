@@ -612,7 +612,7 @@ blocks:
     comment: 'Recuerde usar "/" en Linux y "\" en Windows
 
       para describir la ruta del archivo'
-    file: ..\..\\samples\file_example_WAV_1MG.wav
+    file: ..\..\samples\file_example_WAV_1MG.wav
     maxoutbuf: '0'
     minoutbuf: '0'
     nchan: '1'
@@ -693,8 +693,8 @@ blocks:
     fftsize: '16384'
     freqhalf: 'True'
     grid: 'True'
-    gui_hint: tab_plots@0:0,2,6,2
-    label: Relative Gain
+    gui_hint: tab_plots@1:0,0,6,2
+    label: Relative Gain BEFORE Filter
     label1: ''
     label10: ''''''
     label2: ''''''
@@ -775,7 +775,7 @@ blocks:
     freqhalf: 'True'
     grid: 'True'
     gui_hint: tab_plots@1:0,2,6,2
-    label: Relative Gain
+    label: Relative Gain AFTER Filter
     label1: ''
     label10: ''''''
     label2: ''''''
@@ -906,10 +906,10 @@ blocks:
     width7: '1'
     width8: '1'
     width9: '1'
-    ylabel: Amplitude
+    ylabel: Amplitude BEFORE Filter
     ymax: '1'
     ymin: '-1'
-    yunit: '""'
+    yunit: V
   states:
     bus_sink: false
     bus_source: false
@@ -948,7 +948,7 @@ blocks:
     ctrlpanel: 'False'
     entags: 'True'
     grid: 'True'
-    gui_hint: tab_plots@1:0,0,6,2
+    gui_hint: tab_plots@0:0,2,6,2
     label1: Real
     label10: Signal 10
     label2: Imag
@@ -1003,10 +1003,10 @@ blocks:
     width7: '1'
     width8: '1'
     width9: '1'
-    ylabel: Amplitude
+    ylabel: Amplitude AFTER Filter
     ymax: '1'
     ymin: '-1'
-    yunit: '""'
+    yunit: V
   states:
     bus_sink: false
     bus_source: false
@@ -1054,8 +1054,8 @@ blocks:
     alias: ''
     comment: ''
     gui_hint: 3,0,6,4
-    label0: TX
-    label1: RX
+    label0: Time Domain Plots
+    label1: Frequency Domain Plots
     label10: Tab 10
     label11: Tab 11
     label12: Tab 12
