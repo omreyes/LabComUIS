@@ -28,7 +28,7 @@ Familiarizarse con los fenómenos de canal en un ambiente simulado.
 
 1. **Revisar Manuales y Verificar Equipos:**
    - Cargar el flujograma: [filters_flowgraph.grc](filters_flowgraph.grc).
-   - Configurar siempre la frecuencia de muestreo (`samp_rate`) en `25e6/2n Hz`, donde **n** es un número entero mayor a 2.
+   - Configurar siempre la frecuencia de muestreo (`samp_rate`) en $25e6/2^n$ Hz`, donde $n$ es un número entero mayor a 2.
 
 ### Preguntas Orientadoras
 
@@ -42,7 +42,7 @@ Familiarizarse con los fenómenos de canal en un ambiente simulado.
 
 ### Evidencia
 
-*(Adjuntar la evidencia de la práctica)*
+*(Adjuntar la evidencia de la práctica en el Aula Virtual)*
 
 ---
 
@@ -55,9 +55,9 @@ Familiarizarse con los fenómenos de canal en un ambiente simulado.
 ### Procedimiento
 
 1. **Configurar el USRP 2920:**
-   - Configurar el flujograma (Enlace Descarga) en GNU Radio para transmitir una señal a través del USRP.
-   - Habilitar o deshabilitar los bloques correspondientes (`Channel Model`, `Throttle`, `UHD: USRP Sink`, `Virtual Sink`). Para esto, seleccione el bloque deseado y presione **E** (enable) o **D** (disable), respectivamente.
-   - Configurar siempre la frecuencia de muestreo (`samp_rate`) en `25e6/2n Hz`, donde **n** es un número entero mayor a 2.
+   - Configurar el flujograma [filters_flowgraph.grc](filters_flowgraph.grc) en GNU Radio para transmitir una señal a través del USRP.
+   - Habilitar o deshabilitar los bloques correspondientes (`Channel Model`, `Throttle`, `UHD: USRP Sink`, `Virtual Sink`). Para esto, seleccione el bloque deseado y presione **E** (enable) o **D** (disable), según corresponda.
+   - Configurar siempre la frecuencia de muestreo (`samp_rate`) en $25e6/2^n$ Hz`, donde $n$ es un número entero mayor a 2.
 
 2. **Configurar el Osciloscopio:**
    - Encender, conectar y configurar el osciloscopio con el USRP 2920 usando los parámetros necesarios para evidenciar los fenómenos de canal.
